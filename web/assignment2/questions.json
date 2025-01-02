@@ -1,0 +1,32 @@
+{
+    "questions": [
+        {
+            "question": "Mikä on Suomen pääkaupunki?",
+            "a1": "Helsinki",
+            "a2": "Tukholma",
+            "a3": "Oslo",
+            "answer": "Helsinki"
+        },
+        {
+            "question": "Kuka on Ruotsin kuningas?",
+            "a1": "Olof Palme",
+            "a2": "Kaarle Kustaa",
+            "a3": "Sauli Niinistö",
+            "answer": "Kaarle Kustaa"
+        },
+        {
+            "question": "Minä vuonna Neuvostoliitto hajosi?",
+            "a1": "1891",
+            "a2": "1917",
+            "a3": "1991",
+            "answer": "1991"
+        },
+        {
+            "question": "ekstrakysymys",
+            "a1": "1",
+            "a2": "2",
+            "a3": "3",
+            "answer": "1"
+        }
+    ]
+}

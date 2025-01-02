@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Plotter</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            max-width: 100%;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Function Plotter</h1>
+    <form id="functionForm">
+        <label for="functionInput">Function (e.g., x*x or sin(x)/x):</label>
+        <input type="text" id="functionInput" placeholder="Enter a function">
+        <br><br>
+
+        <label for="startX">Start of x range:</label>
+        <input type="number" id="startX" placeholder="e.g., 0">
+        <br><br>
+
+        <label for="endX">End of x range:</label>
+        <input type="number" id="endX" placeholder="e.g., 10">
+        <br><br>
+
+        <label for="stepX">Step (x step):</label>
+        <input type="number" id="stepX" placeholder="e.g., 1" step="any">
+        <br><br>
+
+        <label for="scaleY">Y Scale Factor:</label>
+        <input type="number" id="scaleY" placeholder="e.g., 1" value="1" step="any">
+        <br><br>
+
+        <button type="button" id="calculateButton">Calculate and Plot</button>
+    </form>
+
+    <div id="output"></div>
+    <canvas id="functionChart"></canvas>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

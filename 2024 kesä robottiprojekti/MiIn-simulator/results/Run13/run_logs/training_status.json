@@ -1,0 +1,29 @@
+{
+    "PushAgent": {
+        "checkpoints": [
+            {
+                "steps": 191266,
+                "file_path": "results\\Run13\\PushAgent\\PushAgent-191266.onnx",
+                "reward": null,
+                "creation_time": 1721738574.3925369,
+                "auxillary_file_paths": [
+                    "results\\Run13\\PushAgent\\PushAgent-191266.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 191266,
+            "file_path": "results\\Run13\\PushAgent.onnx",
+            "reward": null,
+            "creation_time": 1721738574.3925369,
+            "auxillary_file_paths": [
+                "results\\Run13\\PushAgent\\PushAgent-191266.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.3.1+cpu"
+    }
+}

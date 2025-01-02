@@ -1,0 +1,232 @@
+﻿<Window x:Class="Kalonator9000.Laskuri"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kalonator9000"
+        mc:Ignorable="d"
+        Title="Laskuri" Height="500" Width="800"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+
+    <Border CornerRadius="30">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/BgSmoothVioletYellow.jpg"
+                        Stretch="Fill"/>
+        </Border.Background>
+        <Border CornerRadius="30"
+            BorderThickness="5"
+                Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="BurlyWood" Offset="0.5"/>
+                    <GradientStop Color="Moccasin" Offset="0.75"/>
+                    <GradientStop Color="Beige" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#152635" Offset="05"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <UserControl>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,27,0,0" TextWrapping="Wrap" Text="L A S K U R I" VerticalAlignment="Top" Height="70" Width="260" FontSize="48" FontStyle="Italic"
+                           Foreground="PeachPuff"/>
+                    <Button x:Name="minimoiButton" Content="-" HorizontalAlignment="Left" Margin="735,11,0,0" VerticalAlignment="Top" FontSize="16"
+                        Click="btnMinimize_Click" Width="20" Height="20" BorderThickness="0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="LightGray"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="DarkGray"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="20" Height="20"
+                                    CornerRadius="15"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="suljeButton" Content="x" HorizontalAlignment="Left" Margin="760,11,0,0" VerticalAlignment="Top" FontSize="16"
+                        Click="btnClose_Click" Width="20" BorderThickness="0" Height="20">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="PaleVioletRed"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Firebrick"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="20" Height="20"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Label x:Name="Label1" Foreground="PeachPuff" Content="Valitse Ruoka yllä olevasta pudotusvalikosta" Margin="230,121,254,340" HorizontalContentAlignment="Center"/>
+                    <StackPanel Margin="10,97,10,10">
+                        <ComboBox IsEditable="True" x:Name="DropDown" SelectionChanged="DropDown_SelectionChanged" Width="550"/>
+                    </StackPanel>
+                    <Button Content="Lisää Ateriaan" Margin="536,139,133,299" Click="LisääRuokaan" FontFamily="Segoe UI Semibold" Foreground="#152635" FontSize="16">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="PeachPuff"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="BurlyWood"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Height="50"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Label x:Name="LaskurinRuokaaineLista" Margin="10,276,384,10"/>
+                    <Button Content="Tyhjennä lista" Margin="605,414,20,24" Click="TyhjennäLista" FontFamily="Segoe UI Semibold" Foreground="#152635" FontSize="16" Width="165">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="PeachPuff"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="BurlyWood"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Height="50"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <TextBox HorizontalAlignment="Left" Margin="421,318,0,0" TextWrapping="Wrap" Text="Lisää UUSI ruoka-aine ruoka kirjastoon: " VerticalAlignment="Top" Width="349" Height="18" IsEnabled="False"/>
+                    <TextBox HorizontalAlignment="Left" Margin="421,343,0,0" TextWrapping="Wrap" Text="Nimi: " VerticalAlignment="Top" Width="118" Height="18" IsEnabled="False"/>
+                    <TextBox HorizontalAlignment="Left" Margin="421,366,0,0" TextWrapping="Wrap" Text="Kalorit (kCal / 100 g): " VerticalAlignment="Top" Width="118" Height="18" IsEnabled="False"/>
+                    <TextBox HorizontalAlignment="Left" Margin="421,389,0,0" TextWrapping="Wrap" Text="Annoskoko (g): " VerticalAlignment="Top" Width="118" Height="18" IsEnabled="False"/>
+
+                    <TextBox x:Name="UusiAineNimi" HorizontalAlignment="Left" Margin="544,343,0,0"  Text="" VerticalAlignment="Top" Width="226"/>
+                    <TextBox x:Name="UusiAineKalorit" HorizontalAlignment="Left" Margin="544,366,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226"/>
+                    <TextBox x:Name="UusiAineAnnos" HorizontalAlignment="Left" Margin="544,389,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" TextChanged="UusiAineAnnos_TextChanged"/>
+                    <Button Content="Lisää ateriaan JA tallenna päiväkirjaan" HorizontalAlignment="Left" Margin="421,259,0,0" VerticalAlignment="Top" Height="52" Width="349" Click="LisääRuokaAine" FontSize="16" FontFamily="Segoe UI Semibold">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="PeachPuff"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="BurlyWood"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Height="50"
+CornerRadius="10"
+Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Content="Tallenna päiväkirjaan" HorizontalAlignment="Left" Height="52" Margin="421,414,0,0" VerticalAlignment="Top" Width="165" Click="TallennaPäiväkirjaan" FontSize="16" FontFamily="Segoe UI Semibold">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="PeachPuff"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="BurlyWood"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Height="50"
+            CornerRadius="10"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <TextBox x:Name="TarkkaAnnosKenttä" HorizontalAlignment="Left" Margin="180,234,0,0"  Text="" VerticalAlignment="Top" Width="100" Height="32"/>
+                    <Button Content="Lisää tarkka annoskoko (g):" Margin="10,224,624,214" Click="TarkkaAnnos" FontFamily="Segoe UI Semibold">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="PeachPuff"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="BurlyWood"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Height="50"
+            CornerRadius="10"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Label x:Name="Label1_Copy" Foreground="PeachPuff" Content="Et löytänyt haluamaasi annoskokoa?&#xD;&#xA;       &#x9;      Tee uusi!" Margin="25,178,510,273" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="Label1_Copy1" Foreground="PeachPuff" Content="--&gt;" Margin="172,199,584,266" HorizontalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform X="-2"/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label x:Name="Label1_Copy2" Foreground="PeachPuff" Content="Lisää ruoka ateriaan ylläolevasta napista" Margin="439,196,45,265" HorizontalContentAlignment="Center"/>
+
+                </Grid>
+            </UserControl>
+
+
+        </Border>
+    </Border>
+</Window>

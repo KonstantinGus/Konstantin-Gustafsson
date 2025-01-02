@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form name="myForm" action="">
+        <label for="id_name">Your full name:</label>
+        <input type="text" id="id_name" size="60" autofocus placeholder="Joulu Pukki" maxlength="80">
+        <!-- placeholder, 60 size, max 80 char -->
+        <br>
+        <br>
+        <label for="id_password">New Password:</label>
+        <input type="password" id="id_password" size="40" pattern="[A-Za-z_,.-:;?!]{8,20}">
+        <!-- testaa ylläoleva validation -->
+        <br>
+
+        <label for="id_password2">Password again:</label>
+
+        <input type="password" id="id_password2" size="40" pattern="[A-Za-z_,.-:;?!]{8,20}">
+        <br>
+        <p>Gender: </p>
+        <label for="id_male" name="name_gender">Male:</label>
+        <input type="radio" id="id_male" name="name_gender" value="Male">
+        <label for="id_female" name="name_gender">Female:</label>
+        <input type="radio" id="id_female" name="name_gender" value="Female">
+        <label for="id_gender_other" name="name_gender">Other:</label>
+        <input type="radio" id="id_gender_other" name="name_gender" value="Other">
+
+        <br>
+        <p>Hobbies:</p>
+        <label for="id_games">Games</label>
+        <input type="checkbox" name="name_hobby" id="id_games" value="Games">
+        <br>
+
+        <label for="id_music">Music</label>
+        <input type="checkbox" name="name_hobby" id="id_music" value="Music"><br>
+
+        <label for="id_sports">Sports</label>
+        <input type="checkbox" name="name_hobby" id="id_sports" value="Sports"><br>
+
+        <label for="id_tv">TV</label>
+        <input type="checkbox" name="name_hobby" id="id_tv" value="TV">
+        <br>
+        <br>
+        <label for="id_birth_date">Your birth date:</label>
+        <input type="date" id="id_birth_date">
+        <br>
+        <label for="id_height_range">Height:</label>
+        <input type="range" name="name_height" id="id_height_range" min="40" max="300">
+        <input type="number" name="name_height" id="id_height_number" min="40" max="300">
+        <!-- link them -->
+        <br>
+        <label for="id_color">Favourite color:</label>
+        <input type="color" name="" id="id_color">
+        <br>
+        <label for="name_country">What is your home country?</label>
+        <select name="name_country" id="id_country">
+            <option value="Finland" selected>Finland</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Norway">Norway</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Iceland">Iceland</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lithuania">Lithuania</option>
+        </select>
+
+        <br>
+        <label for="id_profession">Profession:</label>
+        <input list="list_profession" id="id_profession" name="name_profession">
+        <datalist id="list_profession">
+            <option value="Teacher">Teacher</option>
+            <option value="Nurse"></option>
+            <option value="Plumber"></option>
+            <option value="Bureucrat"></option>
+        </datalist>
+        <!-- profession -->
+        <br>
+        <p>Send us a message:</p>
+        <textarea name="name_message" id="id_message" rows="6" cols="60" placeholder="Your message goes here..."
+            maxlength="1000"></textarea>
+        <!-- message -->
+        <br>
+        <!-- <input type="submit" value="Submit"> -->
+        <button id="id_button" type="button">Send</button>
+    </form>
+
+    <div id="id_output">
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
